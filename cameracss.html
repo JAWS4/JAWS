@@ -18,12 +18,13 @@
       <div class="progress" id="loader">
          <div class="indeterminate"></div>
       </div>
+      <p>上の枠内に顔全体がおさめてください</p>
       <div style="position: relative" class="margin">
          <video onloadedmetadata="onPlay(this)" id="inputVideo" autoplay muted playsinline></video>
          <canvas id="overlay" />
       </div>
 
-      <div class="row side-by-side">
+      <div class="row side-by-side" style="display: none;">
 
          <!-- face_detector_selection_control -->
          <div id="face_detector_selection_control" class="row input-field" style="margin-right: 20px;">
@@ -36,14 +37,14 @@
          <!-- face_detector_selection_control -->
 
          <!-- check boxes -->
-         <div class="row" style="width: 220px;">
+         <div class="row" style="width: 220px;" style="display: none;">
             <input type="checkbox" id="hideBoundingBoxesCheckbox" onchange="onChangeHideBoundingBoxes(event)" />
             <label for="hideBoundingBoxesCheckbox">Hide Bounding Boxes</label>
          </div>
          <!-- check boxes -->
 
          <!-- fps_meter -->
-         <div id="fps_meter" class="row side-by-side">
+         <div id="fps_meter" class="row side-by-side" style="display: none;">
             <div>
                <label for="time">Time:</label>
                <input disabled value="-" id="time" type="text" class="bold">
@@ -57,8 +58,8 @@
 
 
       <!-- ssd_mobilenetv1_controls -->
-      <span id="ssd_mobilenetv1_controls">
-         <div class="row side-by-side">
+      <span id="ssd_mobilenetv1_controls" style="display: none;">
+         <div class="row side-by-side" style="display: none;">
             <div class="row">
                <label for="minConfidence">Min Confidence:</label>
                <input disabled value="0.5" id="minConfidence" type="text" class="bold">
@@ -74,7 +75,7 @@
       <!-- ssd_mobilenetv1_controls -->
 
       <!-- tiny_face_detector_controls -->
-      <span id="tiny_face_detector_controls">
+      <span id="tiny_face_detector_controls" style="display: none;">
          <div class="row side-by-side">
             <div class="row input-field" style="margin-right: 20px;">
                <select id="inputSize">
@@ -102,7 +103,7 @@
          </div>
       </span>
       <!-- tiny_face_detector_controls -->
-
+      <button id="next-btn">NEXT</button>
 </body>
 
 <script>
