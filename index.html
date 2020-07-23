@@ -8,11 +8,13 @@
 </head>
 
 <body>
-   <h1>JAWS</h1>
-   <p>それでも先に進みますか？</p>
+   <img src="JAWS-logo.png" alt="" width="500px">
    <h2>○に指を置いてください</h2>
    <div class="finger">
-
+      <div class="round1"></div>
+      <div class="round2"></div>
+      <div class="round3"></div>
+      <div class="round4"></div>
    </div>
 
 
@@ -23,8 +25,20 @@
       .finger{
          width: 400px;
          height: 300px;
-         background-color: #ff0;
+         border: solid 5px #ff0;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
       }
+
+      .finger div{
+         width: 50px;/*幅*/
+         height: 50px;/*高さ*/
+         border-radius: 50%;/*角丸*/
+         background: skyblue;
+      }
+
+
    </style>
 </body>
 
