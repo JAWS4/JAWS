@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JAWS</title>
+</head>
+
+<body>
+   <img src="JAWS-logo.png" alt="" width="400px" height="140px">
+   <h3>○に人差し指を置いてください</h3>
+   <span>player 1</span>
+   <span>player 2</span>
+   <div class="finger">
+      <div class="round-box">
+         <div class="round1">L</div>
+      </div>
+      <div class="round-box">
+         <div class="round2">R</div>
+      </div>
+      <div class="round-box">
+         <div class="round3">R</div>
+      </div>
+      <div class="round-box">
+         <div class="round4">L</div>
+      </div>   
+   </div>
+   <button class="btn" style="display: none;">START</button>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script>
+      $(function () {
+         $(".round1" + ".round2" + ".round3" + ".round4").on("touchstart", function(){
+            $(".btn").fadeIn();
+         })
+
+
+
+
+
+      });
+
+
+   </script>
+   
+
+
+   <style>
+      body{
+         width: 100vw;
+         height: 480px;
+         text-align: center;
+         border: solid 10px #3888bd;
+      }
+
+         .finger{
+            width: 100vw;
+            height: 230px;
+            background-image: url(shark-426566_640.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color:rgba(255,255,255,0.5);
+            background-blend-mode:lighten;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+         }
+
+         .round-box{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .round-box div{
+            width: 70px;/*幅*/
+            height: 70px;/*高さ*/
+            border-radius: 50%;/*角丸*/
+            background: rgb(91, 137, 150);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6em;
+            color: aliceblue;
+         }
+         
+         button{
+
+         }
+
+
+   </style>
+</body>
+
+</html>
