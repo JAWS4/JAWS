@@ -14,31 +14,51 @@
    <span>player 2</span>
    <div class="finger">
       <div class="round-box">
-         <div class="round1">L</div>
+         <div class="round1">L1</div>
       </div>
       <div class="round-box">
-         <div class="round2">R</div>
+         <div class="round2">R1</div>
       </div>
       <div class="round-box">
-         <div class="round3">R</div>
+         <div class="round3">R2</div>
       </div>
       <div class="round-box">
-         <div class="round4">L</div>
+         <div class="round4">L2</div>
       </div>   
    </div>
+   <a href="http://localhost:3000/webcam_age_and_gender_recognition">顔認証</a>
    <button class="btn" style="display: none;">START</button>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script>
       $(function () {
-         $(".round1" + ".round2" + ".round3" + ".round4").on("touchstart", function(){
-            $(".btn").fadeIn();
+         let a=b=c=d=0;
+         $(".round1").on("touchstart", function(){
+            a++;
+            console.log("a",a);
+            check(a,b,c,d);
+         })
+         $(".round3").on("touchstart", function(){
+            b++;
+            console.log("b",b);
+            check(a,b,c,d);
+         })
+         $(".round2").on("touchstart", function(){
+            c++;
+            console.log("c",c);
+            check(a,b,c,d);
+         })
+         $(".round4").on("touchstart", function(){
+            d++;
+            console.log("d",d);
+            check(a,b,c,d);
          })
 
-
-
-
-
+         function check(a,b,c,d){
+            if(a>=1 && b>=1 && c>=1 && d>=1){
+               console.log("THX!")
+            }
+         }
       });
 
 
@@ -85,10 +105,6 @@
             align-items: center;
             font-size: 1.6em;
             color: aliceblue;
-         }
-         
-         button{
-
          }
 
 
