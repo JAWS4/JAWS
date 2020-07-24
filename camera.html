@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+
+  <button id="shutter" class="shutter">シャッター</button>
+  <div class="photo video use">
+    <video id="camera" width="550" height="450" autoplay></video>
+  </div>
+
+  <canvas id="picture" width="550" height="450"></canvas>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    window.onload = () => {
+      let t = 0;
+      let index = true;
+      console.log(t);
+      const video = document.querySelector("#camera");
+      const picture = document.querySelector('#picture');
+      let ctx = picture.getContext('2d');
+      // const se = document.querySelector('#se');
+
+      // カメラ設定
+      const constraints = {
+        audio: false,
+        video: {
+          width: 640,
+          height: 480,
+          facingMode: "user" //フロントカメラを利用する
+          // facingMode: {exact: "environment"} //リアカメラを利用する
+        }
+      };
+
+      // カメラを<video></video>と同期
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then((stream) => {
+          video.srcObject = stream;
+          video.onloadedmetadata = (e) => {
+            video.play();
+          };
+        })
+        .catch((err) => {
+          console.log(err.name + ":" + err.message);
+        });
+
+      // シャッターボタン
+      document.querySelector('#shutter').addEventListener('click', () => {
+        if (t === 0) {
+          if (index) {
+            let png;
+            // 映像を止めてSEを再生する
+            video.pause();  //映像を停止
+            // se.play(); //シャッター音
+            setTimeout(() => {
+              window.moveTo("index.html")
+            }, 500);
+
+            // // pictureに画像を貼り付ける
+            ctx.drawImage(video, 0, 0, picture.width, picture.height);
+
+            // // ctxt.drawImage(video, 0, 0, picture.width, picture.height);
+            // // pictureのバイナリURLをとる
+            // png = changeImage(picture);
+
+            // // else if(index === false){
+            // // }
+
+            // // canvasに顔認証して，メガネを表示させる関数に送る
+            // imgLoad(png, ctx);
+            t++;
+          }
+
+        } else {
+          // 撮り直し
+          if (window.confirm("画像変換のため，リロードします")) {
+            location.reload();
+          };
+        }
+      });
+    }
+
+  </script>
+</body>
+
+</html>
