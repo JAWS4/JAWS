@@ -1,0 +1,85 @@
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.top {
+    background: lightgray;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-family: sans-serif;
+}
+
+.bottom {
+    background: lightgreen;
+    height: 50%;
+    display: flex;
+}
+
+.userA,
+.userB{
+    width: 50%;
+    text-align: center;
+}
+
+.yesA,
+.yesB,
+.noA,
+.noB{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-family: sans-serif;
+}
+
+.yesA:hover,
+.yesB:hover,
+.noA:hover,
+.noB:hover
+{
+    background: lime;
+}
+
+.safe,
+.out{
+    font-size: 100px;
+    font-family: sans-serif;
+}
+
+#movie{
+    display: none;
+    width: 100%;
+}
+
+#gameover{
+    display: none;
+}
+
+.time{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.safe_time,
+.out_time{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.q1,
+.q2{
+    display: none;
+}
