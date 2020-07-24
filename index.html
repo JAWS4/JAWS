@@ -10,8 +10,8 @@
 <body>
    <img src="JAWS-logo.png" alt="" width="400px" height="140px">
    <h3>○に人差し指を置いてください</h3>
-   <span>player 1</span>
-   <span>player 2</span>
+   <span>player1</span>
+   <span>player2</span>
    <div class="finger">
       <div class="round-box">
          <div class="round1">L1</div>
@@ -39,7 +39,9 @@
             check(a,b,c,d);
          })
          $(".round3").on("touchstart", function(){
+
             b++;
+
             console.log("b",b);
             check(a,b,c,d);
          })
@@ -56,27 +58,36 @@
 
          function check(a,b,c,d){
             if(a>=1 && b>=1 && c>=1 && d>=1){
-               console.log("THX!")
+               $('.btn').fadeIn();
             }
          }
+         $('.btn').on('click', function() {
+            window.location.href = "rule.html";
+         })
       });
-
-
    </script>
    
 
 
    <style>
       body{
-         width: 100vw;
+         width: 700px;
          height: 480px;
          text-align: center;
          border: solid 10px #3888bd;
+         margin: 0 auto;
+      }
+
+      span{
+         font-size: 1.1em;
+         color: #66a5ad;
+         font-weight: bold;
+         padding: 0 135px;
       }
 
          .finger{
-            width: 100vw;
-            height: 230px;
+            width: 700px;
+            height: 200px;
             background-image: url(shark-426566_640.jpg);
             background-repeat: no-repeat;
             background-position: center;
@@ -105,6 +116,22 @@
             align-items: center;
             font-size: 1.6em;
             color: aliceblue;
+         }
+         
+         button{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #4498be;
+            height: 30px;
+            width: 100px;
+            margin-top: 5px;
+            padding-top: 4px;
+            color: white;
+            margin-bottom: 70px;
+            font-weight: bolder;
+            border: none;
+            box-shadow: 0 3px 0 rgb(207, 230, 243);
          }
 
 

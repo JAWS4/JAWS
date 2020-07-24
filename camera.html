@@ -19,12 +19,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
-    // canvasのURLを取得する関数
-    const changeImage = (canvas) => {
-      const png = canvas.toDataURL('image/png', 0.1);
-      return png;
-    };
-
     window.onload = () => {
       let t = 0;
       let index = true;
@@ -33,17 +27,6 @@
       const picture = document.querySelector('#picture');
       let ctx = picture.getContext('2d');
       // const se = document.querySelector('#se');
-
-      //3.ページ読み込み：保存データ取得表示
-      if (localStorage.getItem('type')) {
-        const type = localStorage.getItem('type');
-        $('select').val(type);
-      };
-      //3.ページ読み込み：保存データ取得表示
-      if (localStorage.getItem('type')) {
-        const type = localStorage.getItem('type');
-        $('select').val(type);
-      };
 
       // カメラ設定
       const constraints = {
@@ -77,7 +60,7 @@
             video.pause();  //映像を停止
             // se.play(); //シャッター音
             setTimeout(() => {
-              video.play();  //0.5秒後にカメラ再開
+              window.moveTo("index.html")
             }, 500);
 
             // // pictureに画像を貼り付ける
@@ -85,7 +68,7 @@
 
             // // ctxt.drawImage(video, 0, 0, picture.width, picture.height);
             // // pictureのバイナリURLをとる
-            png = changeImage(picture);
+            // png = changeImage(picture);
 
             // // else if(index === false){
             // // }

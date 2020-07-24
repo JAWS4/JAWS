@@ -1,0 +1,42 @@
+body{
+   width: 700px;
+   height: 480px;
+   text-align: center;
+   border: solid 10px #3888bd;
+}
+.margin{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: -20px;
+}
+
+video{
+   border: solid 2px #66a5ad;
+   margin: 1.4em 0;
+   width: 300px;
+   height: 170px;
+}
+
+canvas{
+   border: solid 2px #66a5ad;
+   width: 300px;
+   height: 170px;
+}
+
+#next-btn{
+   display: block;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #4498be;
+	height: 30px;
+   width: 100px;
+   margin-top: 30px;
+	padding-top: 4px;
+	color: white;
+   margin-bottom: 70px;
+   font-weight: bolder;
+   border: none;
+   box-shadow: 0 3px 0 rgb(207, 230, 243);
+
+}
