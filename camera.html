@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camera</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <button id="shutter" class="shutter">シャッター</button>
+<h1>シャッターはスペースキーを押してください</h1>
   <div class="photo video use">
     <video id="camera" width="550" height="450" autoplay></video>
   </div>
 
-  <canvas id="picture" width="550" height="450"></canvas>
+  <canvas id="picture" width="300" height="450"></canvas>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
@@ -52,9 +52,9 @@
         });
 
       // シャッターボタン
-      document.querySelector('#shutter').addEventListener('click', () => {
+      $(window).keydown((e) => {
         if (t === 0) {
-          if (index) {
+          if (e.keyCode == 32) {
             let png;
             // 映像を止めてSEを再生する
             video.pause();  //映像を停止
